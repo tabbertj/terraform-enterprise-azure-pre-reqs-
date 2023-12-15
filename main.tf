@@ -8,13 +8,15 @@ terraform {
 }
 
 provider "azurerm" {
+  skip_provider_registration = true
   features {
     resource_group {
       prevent_deletion_if_contains_resources = false
-      skip_provider_registration = true
     }
   }
 }
+
+
 
 resource "azurerm_resource_group" "example" {
   name     = "tfe-pre-reqs"
