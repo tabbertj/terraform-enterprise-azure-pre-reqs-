@@ -18,12 +18,12 @@ provider "azurerm" {
 
 
 
-resource "azurerm_resource_group" "example" {
+resource "azurerm_resource_group" "jt-tfe" {
   name     = "tfe-pre-reqs"
   location = "canadacentral"
 }
 
 resource "azurerm_dns_zone" "example-public" {
   name                = "azure.jtabbert.sbx.hashidemos.io"
-  resource_group_name = azurerm_resource_group.example.name
+  resource_group_name = azurerm_resource_group.jt-tfe.name
 }
